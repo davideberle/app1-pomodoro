@@ -12,6 +12,12 @@ body {
     align-items: center;
     background: linear-gradient(135deg, #f6f8fc 0%, #e9ecef 100%);
     color: #2d3436;
+    transition: all 0.3s ease;
+}
+
+body.dark-theme {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d3436 100%);
+    color: #f6f8fc;
 }
 
 .container {
@@ -24,6 +30,46 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     max-width: 500px;
     width: 90%;
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .container {
+    background: rgba(45, 52, 54, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme h1 {
+    color: #f6f8fc;
+}
+
+body.dark-theme .timer {
+    color: #f6f8fc;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme button {
+    background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
+}
+
+body.dark-theme button:hover {
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.3);
+}
+
+body.dark-theme #pause {
+    background: linear-gradient(135deg, #d63031 0%, #e17055 100%);
+    box-shadow: 0 4px 15px rgba(214, 48, 49, 0.2);
+}
+
+body.dark-theme #reset {
+    background: linear-gradient(135deg, #636e72 0%, #b2bec3 100%);
+    box-shadow: 0 4px 15px rgba(99, 110, 114, 0.2);
+}
+
+body.dark-theme #addFive {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.2);
 }
 
 .header {
@@ -133,6 +179,22 @@ button.active {
 
 #reset:hover {
     box-shadow: 0 6px 20px rgba(99, 110, 114, 0.3);
+}
+
+#addFive {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#addFive:hover {
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.3);
+}
+
+#addFive i {
+    font-size: 0.9rem;
 }
 
 @media (max-width: 480px) {

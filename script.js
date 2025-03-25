@@ -18,12 +18,14 @@ class PomodoroTimer {
         this.pauseButton = document.getElementById('pause');
         this.resetButton = document.getElementById('reset');
         this.modeToggleButton = document.getElementById('modeToggle');
+        this.addFiveButton = document.getElementById('addFive');
 
         // Bind event listeners
         this.startButton.addEventListener('click', () => this.start());
         this.pauseButton.addEventListener('click', () => this.pause());
         this.resetButton.addEventListener('click', () => this.reset());
         this.modeToggleButton.addEventListener('click', () => this.toggleMode());
+        this.addFiveButton.addEventListener('click', () => this.addFiveMinutes());
     }
 
     updateDisplay() {
@@ -70,11 +72,17 @@ class PomodoroTimer {
         const icon = this.modeToggleButton.querySelector('i');
         icon.className = this.isWorkMode ? 'fas fa-moon' : 'fas fa-sun';
         this.modeToggleButton.classList.toggle('rest-mode', !this.isWorkMode);
+        document.body.classList.toggle('dark-theme', !this.isWorkMode);
     }
 
     playNotification() {
         const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU');
         audio.play().catch(error => console.log('Audio play failed:', error));
+    }
+
+    addFiveMinutes() {
+        this.timeLeft += 5 * 60; // Add 5 minutes (300 seconds)
+        this.updateDisplay();
     }
 }
 
