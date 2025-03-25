@@ -66,7 +66,9 @@ class PomodoroTimer {
         this.pause();
         this.timeLeft = this.durations[this.isWorkMode ? 'work' : 'rest'] * 60;
         this.updateDisplay();
-        this.modeToggleButton.textContent = this.isWorkMode ? 'Rest Mode' : 'Work Mode';
+        
+        const icon = this.modeToggleButton.querySelector('i');
+        icon.className = this.isWorkMode ? 'fas fa-moon' : 'fas fa-sun';
         this.modeToggleButton.classList.toggle('rest-mode', !this.isWorkMode);
     }
 

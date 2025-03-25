@@ -26,12 +26,50 @@ body {
     width: 90%;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
 h1 {
     color: #2d3436;
-    margin-bottom: 2.5rem;
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.icon-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.2);
+}
+
+.icon-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.3);
+}
+
+.icon-button.rest-mode {
+    background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
+}
+
+.icon-button.rest-mode:hover {
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.3);
+}
+
+.icon-button.rest-mode i {
+    transform: rotate(180deg);
 }
 
 .timer {
@@ -44,7 +82,7 @@ h1 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.controls, .mode {
+.controls {
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -95,24 +133,6 @@ button.active {
 
 #reset:hover {
     box-shadow: 0 6px 20px rgba(99, 110, 114, 0.3);
-}
-
-#modeToggle {
-    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
-    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.2);
-}
-
-#modeToggle:hover {
-    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.3);
-}
-
-#modeToggle.rest-mode {
-    background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
-    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
-}
-
-#modeToggle.rest-mode:hover {
-    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.3);
 }
 
 @media (max-width: 480px) {
